@@ -1,12 +1,19 @@
 import React from 'react';
+import Signup from '../../components/Signup/SignupComponent';
 
-class Signup extends React.Component{
+const steps = ['signinig', 'registred', 'smsConfirmarion', 'phoneConfirmed']
+
+class SignupView extends React.Component{
+
+  state={
+    step : false
+  }
 
   render(){
 
     return(
       <div>
-        Signup
+        <Signup/>
       </div>
     )
   }

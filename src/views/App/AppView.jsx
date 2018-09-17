@@ -9,6 +9,8 @@ import { Layout } from 'antd';
 import Header from '../../components/Header/HeaderComponent.jsx';
 import Footer from '../../components/Footer/FooterComponent.jsx';
 
+import style from "../../styles";
+
 const { Content } = Layout;
 
 class AppView extends React.Component{
@@ -18,7 +20,7 @@ class AppView extends React.Component{
       <div>
         <Layout>
           <Header/>
-          <Content>
+          <Content style={style.content}>
             <BrowserRouter>
               <div>
               {
