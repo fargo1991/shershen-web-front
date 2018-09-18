@@ -10,7 +10,7 @@ class PasswordRestoreView extends React.Component{
 
     this.props.form.validateFields( (error, fieldValues) => {
 
-      console.log('Good!');
+
 
     })
 
@@ -32,7 +32,7 @@ class PasswordRestoreView extends React.Component{
               label="Введите новый пароль"
             >
               { getFieldDecorator('password', {
-                rules : [ { required : true }]
+                rules : [ { required : true } ]
               })(
                 <Input type="text"/>
               )}
@@ -41,7 +41,7 @@ class PasswordRestoreView extends React.Component{
               label="Еще раз"
             >
               { getFieldDecorator('passwordConfirm', {
-                rules : [ { required : true }]
+                rules : [ { required : true } ]
               })(
                 <Input type="text"/>
               )}

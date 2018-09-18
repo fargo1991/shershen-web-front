@@ -3,3 +3,57 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.primary, .header.primary, .primary a,
+          .footer.primary, .primary a {
+  color : #ecebf0;
+  background-color: #194561;
+  border-color : #194561;
+}
+.primary a:hover{
+  color: #acbbc0;
+}
+
+.secondary .header.secondary, .secondary a,
+           .footer.secondary, .secondary a {
+  color: #ecebf0;
+  background-color: #978683;
+}
+.secondary a:hover{
+  color: #acbbc0;
+}
+
+.dark {
+  color: #ecebf0;
+  background-color : #06070d;
+}
+.primary-color {
+  color: #194561;
+}
+.primary-light-color{
+  color: #96c2e2
+}
+.secondary-color {
+  color: #978683;
+}
+.dark-color{
+  color : #06070d;
+}
+.secondary-light-color{
+  color : #ecebf0;
+}
+.primary.button{
+  border-color: #295571;
+}
+.secondary.button{
+  border-color: #a79693;
+}
+
+ul {
+  list-style-type: square;
+}
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}

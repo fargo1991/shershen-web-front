@@ -9,8 +9,8 @@ class FooterComponent extends React.Component{
 
   render(){
     return(
-      <Footer className="footer">
-        Footer
+      <Footer className="footer secondary">
+        <p style={{textAlign : 'center', margin : 'auto'}}>SherShern International LLC (c)</p>
       </Footer>
     )
   }

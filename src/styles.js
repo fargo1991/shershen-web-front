@@ -6,6 +6,7 @@ export default {
     width : "100%"
   },
   content : {
-    backgroundColor : "#fff"
+    backgroundColor : "#fff",
+    paddingBottom: 90
   }
 }

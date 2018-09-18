@@ -10,6 +10,7 @@ import Header from '../../components/Header/HeaderComponent.jsx';
 import Footer from '../../components/Footer/FooterComponent.jsx';
 
 import style from "../../styles";
+import '../../index.css';
 
 const { Content } = Layout;
 
