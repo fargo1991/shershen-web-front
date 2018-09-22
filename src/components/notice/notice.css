@@ -1,0 +1,14 @@
+.notice {
+    position: fixed;
+    top : 20px;
+    margin : auto;
+    font-size: 14px;
+}
+.notice.notice-error {
+    background-color: #bb3333;
+    color: white;
+}
+
+.notice .notice-error .title{
+    font-size: 16px;
+}

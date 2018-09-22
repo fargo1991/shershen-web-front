@@ -9,7 +9,7 @@ class SearchBox extends React.Component{
     return(
       <Form>
         <Input.Search
-          placeholder="Найти ближайший сервис..."
+          placeholder="Что вас интересует?"
           size="large"
           enterButton="Найти"
           classname="primary"

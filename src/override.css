@@ -1,0 +1,10 @@
+.has-error .ant-input, .has-error .ant-input:hover {
+    color : #bb3333;
+    border-color: #bb3333;
+}
+.has-error .ant-input-prefix {
+    color : #bb3333;
+}
+.has-error .ant-form-explain, .has-error .ant-form-split {
+    color: #bb3333;
+}

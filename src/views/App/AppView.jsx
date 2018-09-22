@@ -18,21 +18,19 @@ class AppView extends React.Component{
 
   render(){
     return(
-      <div>
         <Layout>
-          <Header/>
-          <Content style={style.content}>
-            <BrowserRouter>
-              <div>
-              {
-                routes.map( route => <Route path={route.path} component={route.component} exact={route.exact}/>)
-              }
-              </div>
-            </BrowserRouter>
-          </Content>
+            <Header/>
+            <Content style={style.content} className="content">
+              <BrowserRouter>
+                <div>
+                {
+                  routes.map( route => <Route path={route.path} component={route.component} exact={route.exact} key={route.path}/>)
+                }
+                </div>
+              </BrowserRouter>
+            </Content>
           <Footer/>
         </Layout>
-      </div>
     )
   }
 

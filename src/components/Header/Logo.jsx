@@ -5,7 +5,7 @@ class Logo extends React.Component{
   render(){
 
     return(
-      <a href={"/"}>
+      <a href={"/"} className="header-logo">
         ШЕРШЕНЬ
       </a>
     )

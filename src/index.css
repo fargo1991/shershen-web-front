@@ -4,29 +4,25 @@ body {
   font-family: sans-serif;
 }
 
-.primary, .header.primary, .primary a,
-          .footer.primary, .primary a {
-  color : #ecebf0;
-  background-color: #194561;
-  border-color : #194561;
+html,
+body,
+
+.content {
+  min-height: calc(100vh - 144px);
+  /*padding-bottom: 90px;*/
 }
-.primary a:hover{
-  color: #acbbc0;
+.footer {
+  height: 80px;
+  bottom: 0;
+  /*position: absolute;*/
+  width: 100%;
 }
 
-.secondary .header.secondary, .secondary a,
-           .footer.secondary, .secondary a {
-  color: #ecebf0;
-  background-color: #978683;
-}
-.secondary a:hover{
-  color: #acbbc0;
-}
+/**
 
-.dark {
-  color: #ecebf0;
-  background-color : #06070d;
-}
+  COLORS
+
+*/
 .primary-color {
   color: #194561;
 }
@@ -42,11 +38,93 @@ body {
 .secondary-light-color{
   color : #ecebf0;
 }
+
+/**
+
+  COMMON ELEMENTS
+
+*/
+
+.button, button{
+  margin-right: 8px;
+}
+
+.link {
+  margin : 15px 8px 15px 8px;
+}
+
+input {
+  border-radius: 1px !important;
+}
+/**
+
+  PRIMARY
+
+*/
+.primary, .header.primary, .primary a,
+          .footer.primary {
+  color : #ecebf0;
+  background-color: #194561;
+  border-color : #194561;
+}
+
 .primary.button{
   border-color: #295571;
+  background-color: #194561;
 }
+.primary.button:hover{
+  border-color: #497591;
+  background-color: #497591;
+}
+
+.primary a:hover{
+  color: #acbbc0;
+}
+
+.primary a.link, a.link.primary{
+  color: #194561;
+}
+
+/**
+
+  SECONDARY
+
+*/
+
+.secondary .header.secondary, .secondary a,
+           .footer.secondary {
+  color: #ecebf0;
+  background-color: #978683;
+}
+.secondary a:hover{
+  color: #acbbc0;
+}
+
+.secondary a.link, a.link.secondary{
+  color: #978683;
+}
+
+
+
 .secondary.button{
   border-color: #a79693;
+  background-color: #978683;
+  color: #fff;
+}
+.secondary.button:hover{
+  border-color: #d7c6c3;
+  background-color: #b7a6a3;
+}
+
+/**
+
+  DARK
+
+ */
+
+.dark {
+  color: #ecebf0;
+  background-color : #06070d;
 }
 
 ul {
@@ -56,4 +134,31 @@ li {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;
+}
+
+.card {
+  background-color: #fafafa;
+  border-color: #cccbd0;
+}
+.ant-card-head {
+  /*background-color: #cccbd0;*/
+  border-color: #cccbd0;
+}
+
+/**
+
+  BEM
+
+*/
+
+.cursor-pointer{
+  cursor: pointer;
+  user-select: none;
+}
+.underlined{
+  text-decoration: underline;
+}
+
+.shershen_order p{
+  text-indent: 15px;
 }
