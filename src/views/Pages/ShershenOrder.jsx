@@ -1,12 +1,16 @@
 import React from 'react';
+import { Card } from 'antd';
 
 class ShershenOrder extends React.Component{
 
   render(){
 
     return(
-      <div style={ { width : 700, margin : 'auto' } } className="shershen_order">
-        <h1>Пользовательское Соглашение</h1>
+      <Card
+        style={ { width : 700, margin : 'auto', marginTop : 20 } }
+        className="shershen_order"
+        title="Пользовательское Соглашение"
+      >
 
         <p>Настоящее Пользовательское Соглашение (Далее Соглашение) регулирует отношения между владельцем (далее или Администрация) с одной стороны и пользователем сайта с другой.
           Сайт не является средством массовой информации.</p>
@@ -56,7 +60,7 @@ class ShershenOrder extends React.Component{
 
 
         <p>Соглашение создано с помощью Правилль</p>
-      </div>
+      </Card>
     )
 
   }

@@ -35,7 +35,7 @@ class SignupComponent extends React.Component{
           if( error.response ){
             callback("Логин уже занят")
           } else{
-            callback("При выполнении запроса произошла ошибка =(")
+            callback()
           }
         }
       )
@@ -52,7 +52,7 @@ class SignupComponent extends React.Component{
             if (error.response.status == 404) callback();
             callback("Почтовый адрес уже занят")
           } else {
-            callback("При выполнение запроса произошла ошибка =(")
+            callback()
           }
         }
       )
@@ -60,13 +60,13 @@ class SignupComponent extends React.Component{
 
   onSubmit = () => {
 
-    notice.error("error", "top")
-
-
 
     this.props.form.validateFields( (err, fieldValues) => {
-      if(err) return false;
-      console.log("onSubmit")
+      if(err){
+        notice.warning("Указаны некорректные данные для регистрации.", "top", "Неверные данные")
+        return false;
+      }
+
       signupCustomer(fieldValues)
         .then(
           result => {
@@ -76,8 +76,10 @@ class SignupComponent extends React.Component{
         )
         .catch(
           error =>{
-            console.log("Errror")
-            alert(error)
+            if(!error.response){ notice.error("Похоже, что связь с сервером прервалась. Попробуйте повторить запрос позже или проверьте соединение с сети.", "top", "Нет связи"); return false }
+            if (error.response.status == "400") notice.error("Неверный запрос. Проверьте правильность введенных вами данных", "top", "Неверный запрос")
+            else if (error.response.status == "500") notice.error("Увы =( Что-то пошло не так. Сообщите нам об ошибке и мы постораемся ее как можно скорее исправить.", "top", "Ошибка сервера");
+            console.log(error)
           }
         )
 
