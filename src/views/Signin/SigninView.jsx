@@ -1,7 +1,9 @@
 import React from 'react';
 
+import CONFIG from '../../api/config';
+
 import Signin from '../../components/SIgnIn/SigninComponent';
-import SigninSuccess from '../../components/Signup/SignupSuccess';
+import notice from '../../components/notice/notice.js';
 
 class SigninView extends React.Component{
 
@@ -9,47 +11,21 @@ class SigninView extends React.Component{
     step : 'registration' // 'phoneConfirmation'
   }
 
-  handleRegister = () => {
-
-    this.setState({ step : 'phoneConfirmation'})
-
+  redirectToHome = () => {
+   window.location = CONFIG.SELF_HOST_URL;
   }
 
   handleError = () => {
-
+    notice.error("Неверный логин или пароль","top","Ошибка авторизации")
   }
 
   render(){
-
-    switch (this.state.step){
-
-      case 'registration' : {
-        return(
-          <Signin
-            onOk={this.handleRegister}
-            onError={this.handleError}
-          />
-        )
-      } break;
-
-      case 'phoneConfirmation' : {
-        return (
-          <SigninSuccess/>
-        )
-      } break;
-
-      default: {
-        return (
-          <Signin
-            onOk={this.handleRegister}
-            onError={this.handleError}
-          />
-        )
-      };
-
-    }
-
-
+    return(
+      <Signin
+        onOk={this.redirectToHome}
+        onError={this.handleError}
+      />
+    )
   }
 
 }

@@ -52,7 +52,7 @@ class SignupSuccess extends React.Component{
         </p>
 
         <p style={{ float : 'right'} }>
-          <Button className="button secondary">Пропустить</Button>
+          <Button className="button secondary"><a href="/">Пропустить</a></Button>
           <Button className="button primary" style={{disabled:"disabled"}}> Подтвердить</Button></p>
 
       </Card>

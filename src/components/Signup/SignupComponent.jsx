@@ -4,6 +4,7 @@ import { Form, Input, Row, Col, Icon, Card, Button } from 'antd'
 import style from '../../styles.js';
 
 import notice from "../notice/notice.js";
+import messages from '../../dictionary/messages';
 
 import signupCustomer from '../../api/security/registerCustomer';
 import checkLoginExist from '../../api/security/checkLoginExist';
@@ -76,8 +77,8 @@ class SignupComponent extends React.Component{
         )
         .catch(
           error =>{
-            if(!error.response){ notice.error("Похоже, что связь с сервером прервалась. Попробуйте повторить запрос позже или проверьте соединение с сети.", "top", "Нет связи"); return false }
-            if (error.response.status == "400") notice.error("Неверный запрос. Проверьте правильность введенных вами данных", "top", "Неверный запрос")
+            if(!error.response){ notice.error(messages.NO_CONNECTION.msg, "top", messages.NO_CONNECTION.title); return false }
+            if (error.response.status == "400") notice.error(messages.BAD_REQUEST.msg, "top", messages.BAD_REQUEST.title);
             else if (error.response.status == "500") notice.error("Увы =( Что-то пошло не так. Сообщите нам об ошибке и мы постораемся ее как можно скорее исправить.", "top", "Ошибка сервера");
             console.log(error)
           }

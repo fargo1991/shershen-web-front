@@ -1,10 +1,10 @@
-export const AUTHORIZE_USER = 'AUTHORIZE_USER';
+export const USER_AUTHORIZED = 'USER_AUTHORIZED';
 export const UNAUTHORIZE_USER = 'UNAUTHORIZE_USER';
 
-export function authorizeUser(){
+export function userAuthorized(authData){
   return {
-    type : AUTHORIZE_USER,
-    payload : {}
+    type : USER_AUTHORIZED,
+    payload : authData
   }
 }
 

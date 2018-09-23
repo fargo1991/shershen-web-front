@@ -3,6 +3,7 @@ import React from 'react';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 import { Layout } from 'antd';
 
@@ -18,8 +19,15 @@ class HeaderComponent extends React.Component{
     return(
       <Header className="primary header">
         <Logo/>
-        <a style={{ float : 'right' }} href="/signin"> {'\u00a0'} Войти</a>
-        <a style={{ float : 'right' }} href="/signup"> Зарегистрироваться / </a>
+        {
+          this.props.user.authorized ?
+            <div style={{ float : 'right' }}>{this.props.user.name}</div> :
+            <div style={{ float : 'right' }}>
+              <a style={{ float : 'right' }} href="/signin"> {'\u00a0'} Войти</a>
+              <a style={{ float : 'right' }} href="/signup"> Зарегистрироваться / </a>
+            </div>
+        }
+
       </Header>
     )
   }
@@ -27,10 +35,8 @@ class HeaderComponent extends React.Component{
 }
 
 function mapStateToProps(state){
-  console.log(state)
-
   return {
-    // authorized : state.user.authorized
+    user : state.user
   }
 }
 
@@ -40,10 +46,5 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HeaderComponent));
 
-
-
-// ощущение накатывающего страха
-// боязнь что сейчас повторится выброс адреналина
-// заболит голова и прочее

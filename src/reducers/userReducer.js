@@ -1,18 +1,24 @@
-import { AUTHORIZE_USER, UNAUTHORIZE_USER } from '../actions/userAction';
+import { USER_AUTHORIZED, UNAUTHORIZE_USER } from '../actions/userAction';
 
 const initialState = {
-  user : {
     authorized: false,
-    name: 'Vasya'
-  }
+    name: 'Неизвестный пользователь',
+
+    authData : {
+      access_token : null,
+      refresh_token : null
+    }
 }
 
 export default function (state =  initialState, action) {
 
   switch(action.type){
 
-    case AUTHORIZE_USER: {
-      return Object.assign( state, { authorized : true })
+    case USER_AUTHORIZED: {
+
+      updateAuthDataLocalStorage(action.payload)
+
+      return Object.assign( state, { authorized : true, authData: action.payload })
     } break;
 
     case UNAUTHORIZE_USER: {
@@ -24,4 +30,9 @@ export default function (state =  initialState, action) {
   }
 
   return state;
+}
+
+function updateAuthDataLocalStorage(authData){
+  let oldData = window.localStorage.getItem('authData');
+  if (oldData !== authData) window.localStorage.setItem('authData', JSON.stringify(authData))
 }

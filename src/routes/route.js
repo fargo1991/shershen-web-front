@@ -12,6 +12,7 @@ import ShershenOrder from '../views/Pages/ShershenOrder.jsx';
 
 export default [
   { path : '/', component : HomeView, exact : true },
+  { path : '/home', component : HomeView, exact : true },
   { path : '/signin', component : SigninView },
   { path : '/signup', component : SignupView },
 
